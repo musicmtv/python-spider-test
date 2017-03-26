@@ -3,3 +3,11 @@ git config --global user.email "james07@139.com"
 git config user.name
 #初始化git
 git init
+#查看状态
+git status
+#添加文件
+git add 1.py
+#添加所有文件
+git add .
+#提交改变commit
+git commit -m "create 1.py"
