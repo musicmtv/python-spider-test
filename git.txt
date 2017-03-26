@@ -62,4 +62,6 @@ git merge --no-ff -m "keep merge info" dev
 git remote add origin https://github.com/musicmtv/python-spider-test.git
 git push -u origin master
 #先删除远程 Git 仓库
- git remote rm origin
+git remote rm origin
+#如果执行 git remote rm origin 报错的话，我们可以手动修改gitconfig文件的内容
+vi .git/config
