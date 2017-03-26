@@ -61,3 +61,5 @@ git branch#查看现在是否在master上面
 git merge --no-ff -m "keep merge info" dev
 git remote add origin https://github.com/musicmtv/python-spider-test.git
 git push -u origin master
+#先删除远程 Git 仓库
+ git remote rm origin
