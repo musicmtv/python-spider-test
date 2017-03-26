@@ -11,3 +11,9 @@ git add 1.py
 git add .
 #提交改变commit
 git commit -m "create 1.py"
+#查看修改log
+git log
+#查看内容细节不同
+git diff
+git diff --cached
+#回到从前reset
