@@ -1,0 +1,5 @@
+git config --global user.name "james zhu"
+git config --global user.email "james07@139.com"
+git config user.name
+#≥ı ºªØgit
+git init
