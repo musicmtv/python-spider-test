@@ -17,3 +17,47 @@ git log
 git diff
 git diff --cached
 #回到从前reset
+git add 2.py
+#撤销提交2.py
+git commit --amend --no-edit
+#把1.py提交修改
+git add 1.py
+#把1.py撤销staged到unmodified
+git reset 1.py
+#查看哪几个文件被修改
+git log --oneline
+#回到上一个
+git reset --hard HEAD
+#回到上上一个
+git reset --hard HEAD^
+#回到上上上一个
+git reset --hard HEAD^^
+#回到上上上一个
+git reset --hard HEAD~3
+#回到上一个另一种表示"commit id"
+git reset --hard c6762a1
+#查看记录之前操作的"commit id" 查看未来
+git reflog
+#回到某一个单个文件的过去
+git checkout c6762a1 -- 1.py
+#查看分支
+git log --oneline --graph
+#创建分支
+git branch dev
+#回到某个分支
+git checkout dev
+#切换到master
+git checkout master
+#删除dev分支
+git branch -d dev
+#回到dev分支
+git checkout -b dev
+#查看分支
+git branch
+#添加提交同时进行,新文件这样做无效
+git commit -am "change 3"
+#把分支代码推到master上面，先要在master上面
+git branch#查看现在是否在master上面
+git merge --no-ff -m "keep merge info" dev
+git remote add origin https://github.com/musicmtv/python-spider-test.git
+git push -u origin master
