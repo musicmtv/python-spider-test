@@ -1,5 +1,9 @@
+#coding:utf-8
 import os
-
+import codecs
+import re
+import string
+import json
 
 def dir_list(dir_name, subdir, *args):
 	'''Return a list of file names in directory 'dir_name'
@@ -25,15 +29,24 @@ def dir_list(dir_name, subdir, *args):
 
 
 def combine_files(fileList, fn):
-	f = open(fn, 'w')
+	f = open(fn, 'a',encoding='utf-8')
 	for file in fileList:
 		print('Writing file %s' % file)
-		f.write(open(file).read())
+		#写入过滤符号
+		f.write(open(file,encoding='utf-8').read())
+		# f.write('a,')
 	f.close()
 
 
 if __name__ == '__main__':
-	search_dir = "D:/python"
+	blank = open('output_file.txt','w')  #新建空白文件TXT
+	blank.close()
+	search_dir = "D:/python/word-count/laravel"
 	fn = "output_file.txt"
-	for root, dirs, files in os.walk("D:/python"):
-		combine_files(dir_list(root, False, 'txt'), fn)
+	# combine_files(dir_list(search_dir, False, 'txt'), fn)
+	for root, dirs, files in os.walk(search_dir):
+		root = root.replace( "\\","/") #转换root path
+		root = root+"/"
+
+		combine_files(dir_list(root, False, 'txt','php','py','json'), fn)
+		# print(root)
