@@ -1,9 +1,6 @@
 #coding:utf-8
 import os
-import codecs
-import re
-import string
-import json
+
 
 def dir_list(dir_name, subdir, *args):
 	'''Return a list of file names in directory 'dir_name'
